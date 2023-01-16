@@ -6,7 +6,8 @@ const bodyParser = require('body-parser'); // Сборка пакетов
 const cookieParser = require('cookie-parser');
 const routes = require('./routes/routes');
 const { cors } = require('./middlewares/cors');
-const { PORT, URL_DATABASE, } = require('./utils/constants');
+const { PORT, URL_DATABASE } = require('./utils/constants');
+
 const app = express();
 
 app.use(cors);

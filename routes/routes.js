@@ -11,9 +11,9 @@ const { createUserValidator, loginValidator } = require('../middlewares/validati
 
 router.use(requestLogger); // подключаем логгер запросов
 // создаёт пользователя [email password name]
-routes.post('/signup', createUserValidator, createUser);
+router.post('/signup', createUserValidator, createUser);
 // проверяет переданные [email password] и возвращает JWT
-routes.post('/signin', loginValidator, login);
+router.post('/signin', loginValidator, login);
 
 router.use(auth); // защита авторизацией
 router.use('/', usersRouter);

@@ -51,5 +51,9 @@ const updateUserValidator = celebrate({
 });
 
 module.exports = {
-  createUserValidator, loginValidator, createMovieValidator, deleteMovieValidator, updateUserValidator,
+  createUserValidator,
+  loginValidator,
+  createMovieValidator,
+  deleteMovieValidator,
+  updateUserValidator,
 };
