@@ -1,5 +1,5 @@
 const { celebrate, Joi } = require('celebrate');
-const { httpRegex } = require('../utils/constants');
+const { urlRegExp } = require('../utils/constants');
 
 // post '/signup'
 const createUserValidator = celebrate({
@@ -26,11 +26,11 @@ const createMovieValidator = celebrate({
     duration: Joi.number().required(),
     year: Joi.string().required(),
     description: Joi.string().required(),
-    image: Joi.string().required().regex(httpRegex),
-    trailer: Joi.string().required().regex(httpRegex),
+    image: Joi.string().required().regex(urlRegExp),
+    trailer: Joi.string().required().regex(urlRegExp),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
-    thumbnail: Joi.string().required().regex(httpRegex),
+    thumbnail: Joi.string().required().regex(urlRegExp),
     movieId: Joi.number().required(),
   }),
 });
