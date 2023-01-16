@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { createMovieValidator, deleteMovieValidator } = require('../middlewares/validations');
-const { celebrate, Joi } = require('celebrate');
 const {
   getMovies,
   createMovie,
