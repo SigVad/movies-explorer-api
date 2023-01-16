@@ -1,5 +1,5 @@
 {
-  "name": "express-mesto-gha",
+  "name": "movies-explorer-api",
   "version": "1.0.0",
   "description": "[![Tests](../../actions/workflows/tests-13-sprint.yml/badge.svg)](../../actions/workflows/tests-13-sprint.yml) [![Tests](../../actions/workflows/tests-14-sprint.yml/badge.svg)](../../actions/workflows/tests-14-sprint.yml)\r # Проект Mesto фронтенд + бэкенд",
   "main": "app.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SigVad/express-mesto-gha.git"
+    "url": "git+https://github.com/SigVad/movies-explorer-api.git"
   },
   "keywords": [],
   "author": "Vadim Sigachev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SigVad/express-mesto-gha/issues"
+    "url": "https://github.com/SigVad/movies-explorer-api/issues"
   },
-  "homepage": "https://github.com/SigVad/express-mesto-gha#readme",
+  "homepage": "https://github.com/SigVad/movies-explorer-api#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
