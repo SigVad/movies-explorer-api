@@ -16,12 +16,12 @@ router.post('/signup', createUserValidator, createUser);
 router.post('/signin', loginValidator, login);
 
 router.use(auth); // защита авторизацией
-router.use('/', usersRouter);
-router.use('/', movieRouter);
 //  удалится JWT из куков пользователя
 router.post('/signout', (req, res) => {
   res.clearCookie('access_token').send({ message: 'Выход' });
 });
+router.use('/', usersRouter);
+router.use('/', movieRouter);
 
 router.use('*', (req, res, next) => {
   next(new NotFoundErr('Страница не найдена'));

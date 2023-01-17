@@ -22,14 +22,18 @@ const loginValidator = celebrate({
 const createMovieValidator = celebrate({
   body: Joi.object().keys({
     country: Joi.string().required(),
+    // режиссёр
     director: Joi.string().required(),
+    // длительность
     duration: Joi.number().required(),
     year: Joi.string().required(),
     description: Joi.string().required(),
+    // постер
     image: Joi.string().required().regex(urlRegExp),
     trailer: Joi.string().required().regex(urlRegExp),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
+    // минипостер
     thumbnail: Joi.string().required().regex(urlRegExp),
     movieId: Joi.number().required(),
   }),
@@ -45,7 +49,7 @@ const deleteMovieValidator = celebrate({
 // patch '/users/me'
 const updateUserValidator = celebrate({
   body: Joi.object().keys({
-    email: Joi.string().required().email({ tlds: { allow: false } }),
+    email: Joi.string().required().email(),
     name: Joi.string().required().min(2).max(30),
   }),
 });

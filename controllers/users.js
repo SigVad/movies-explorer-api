@@ -6,6 +6,7 @@ const BadRequestErr = require('../errors/BadRequestErr');
 const ConflictErr = require('../errors/ConflictErr');
 
 const getCurrentUser = (req, res, next) => {
+  console.log(req.user);
   User.findById(req.user._id)
     .orFail(() => {
       throw new NotFoundErr('Пользователь по указанному _id не найден');
