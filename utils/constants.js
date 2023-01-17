@@ -1,6 +1,6 @@
 const {
   PORT = 3000,
-  URL_DATABASE = 'mongodb://localhost:27017/moviesdb',
+  URL_DATABASE = 'mongodb://localhost:27017/bitfilmsdb',
 } = process.env; // для разработки
 
 // регулярное выражение для проверки валидации ссылки

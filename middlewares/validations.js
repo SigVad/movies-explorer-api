@@ -30,7 +30,7 @@ const createMovieValidator = celebrate({
     description: Joi.string().required(),
     // постер
     image: Joi.string().required().regex(urlRegExp),
-    trailer: Joi.string().required().regex(urlRegExp),
+    trailerLink: Joi.string().required().regex(urlRegExp),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
     // минипостер
