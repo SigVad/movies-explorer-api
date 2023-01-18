@@ -16,7 +16,8 @@ app.use(bodyParser.json());
 // для приёма веб-страниц внутри POST-запроса
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-
+// убрать ошибку старого мангуса
+mongoose.set('strictQuery', true);
 // подключаемся к серверу mongo
 mongoose.connect(URL_DATABASE, {
   useUnifiedTopology: true,
