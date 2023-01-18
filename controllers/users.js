@@ -6,7 +6,6 @@ const BadRequestErr = require('../errors/BadRequestErr');
 const ConflictErr = require('../errors/ConflictErr');
 
 const getCurrentUser = (req, res, next) => {
-  console.log(req.user);
   User.findById(req.user._id)
     .orFail(() => {
       throw new NotFoundErr('Пользователь по указанному _id не найден');
@@ -23,7 +22,7 @@ const getCurrentUser = (req, res, next) => {
     });
 };
 
-const updateUser = (req, res, next) => {
+const userInfo = (req, res, next) => {
   const { name, email, _id = req.user._id } = req.body;
   User.findByIdAndUpdate(_id, { name, email }, { new: true, runValidators: true })
     .orFail(() => {
@@ -54,7 +53,7 @@ const login = (req, res, next) => {
         .cookie('access_token', token, {
           maxAge: 604800000,
           httpOnly: true,
-          secure: true,
+          secure: true, // для передачи кук только по https
           sameSite: false,
         })
         .send({ message: 'Аутентификация прошла успешно' });
@@ -93,5 +92,5 @@ const createUser = (req, res, next) => {
 };
 
 module.exports = {
-  getCurrentUser, updateUser, login, createUser,
+  getCurrentUser, userInfo, login, createUser,
 };
