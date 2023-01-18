@@ -4,11 +4,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser'); // Сборка пакетов
 const cookieParser = require('cookie-parser');
-const routes = require('./routes/routes');
+const helmet = require('helmet');
+const limiter = require('./middlewares/limiter');
 const { cors } = require('./middlewares/cors');
 const { PORT, URL_DATABASE } = require('./utils/constants');
+const routes = require('./routes/index');
 
 const app = express();
+
+app.use(limiter);
+app.use(helmet());
 
 app.use(cors);
 // для собирания JSON-формата
