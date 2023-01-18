@@ -19,20 +19,17 @@ const loginValidator = celebrate({
 });
 
 // post '/movies'
-const createMovieValidator = celebrate({
+const addMovieValidator = celebrate({
   body: Joi.object().keys({
-    country: Joi.string().required(),
-    // режиссёр
-    director: Joi.string().required(),
-    // длительность
-    duration: Joi.number().required(),
-    year: Joi.string().required(),
-    description: Joi.string().required(),
-    // постер
-    image: Joi.string().required().regex(urlRegExp),
-    trailerLink: Joi.string().required().regex(urlRegExp),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
+    director: Joi.string().required(), // режиссёр
+    country: Joi.string().required(),
+    year: Joi.string().required(),
+    duration: Joi.number().required(), // длительность
+    description: Joi.string().required(),
+    trailerLink: Joi.string().required().regex(urlRegExp),
+    image: Joi.string().required().regex(urlRegExp), // постер
     // минипостер
     thumbnail: Joi.string().required().regex(urlRegExp),
     movieId: Joi.number().required(),
@@ -47,17 +44,17 @@ const deleteMovieValidator = celebrate({
 });
 
 // patch '/users/me'
-const updateUserValidator = celebrate({
+const userInfoValidator = celebrate({
   body: Joi.object().keys({
-    email: Joi.string().required().email(),
     name: Joi.string().required().min(2).max(30),
+    email: Joi.string().required().email({ tlds: { allow: false } }),
   }),
 });
 
 module.exports = {
   createUserValidator,
   loginValidator,
-  createMovieValidator,
+  addMovieValidator,
   deleteMovieValidator,
-  updateUserValidator,
+  userInfoValidator,
 };

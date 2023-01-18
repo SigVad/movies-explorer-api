@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { createMovieValidator, deleteMovieValidator } = require('../middlewares/validations');
+const { addMovieValidator, deleteMovieValidator } = require('../middlewares/validations');
 const {
   getMovies,
-  createMovie,
+  addMovie,
   deleteMovie,
 } = require('../controllers/movies');
 
@@ -10,7 +10,7 @@ const {
 router.get('/movies', getMovies);
 
 // создаёт фильм
-router.post('/movies', createMovieValidator, createMovie);
+router.post('/movies', addMovieValidator, addMovie);
 
 // удаляет сохранённый фильм по id
 router.delete('/movies/:movieId', deleteMovieValidator, deleteMovie);
