@@ -1,11 +1,11 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
-  'http://sigvad-movies.nomoredomains.club',
-  'https://sigvad-movies.nomoredomains.club',
+  'http://sigvad.nomoredomains.rocks',
+  'https://sigvad.nomoredomains.rocks',
   'http://localhost:3000',
-  'https://localhost:3000',
+  'http://127.0.0.1:3000',
   'http://localhost:3001',
-  'https://localhost:3001',
+  'http://127.0.0.1:3001',
 ];
 // Значение для заголовка Access-Control-Allow-Methods по умолчанию (разрешены все типы запросов)
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
