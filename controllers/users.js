@@ -54,7 +54,8 @@ const login = (req, res, next) => {
           maxAge: 604800000,
           httpOnly: true,
           secure: true, // для передачи кук только по https
-          sameSite: false,
+          // secure: false,
+          sameSite: 'none',
         })
         .send({ message: 'Аутентификация прошла успешно' });
     })
