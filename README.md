@@ -1,7 +1,7 @@
 # movies-explorer-api
 бэкенд часть диплома
 
-* IP 51.250.76.234
+* IP 158.160.53.124
 
 * Frontend 
  https://sigvad.nomoredomains.rocks
