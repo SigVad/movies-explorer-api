@@ -30,6 +30,10 @@ const userInfo = (req, res, next) => {
     })
     .then((user) => res.send(user))
     .catch((err) => {
+      if (err.code === 11000) {
+        next(new ConflictErr('Пользователь уже существует'));
+        return;
+      };
       if (err.name === 'ValidationError') { // записываем в БД, проверка по схеме
         next(new BadRequestErr('Переданы некорректные данные пользователя'));
       } else {
